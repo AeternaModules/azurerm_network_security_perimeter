@@ -1,3 +1,7 @@
+output "network_security_perimeters_id" {
+  description = "Map of id values across all network_security_perimeters, keyed the same as var.network_security_perimeters"
+  value       = { for k, v in azurerm_network_security_perimeter.network_security_perimeters : k => v.id }
+}
 output "network_security_perimeters_location" {
   description = "Map of location values across all network_security_perimeters, keyed the same as var.network_security_perimeters"
   value       = { for k, v in azurerm_network_security_perimeter.network_security_perimeters : k => v.location }
